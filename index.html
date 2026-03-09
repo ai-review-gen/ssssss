@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Leave a Review</title>
+
+<style>
+
+body{
+font-family: Arial, sans-serif;
+background:#f2f2f2;
+margin:0;
+padding:0;
+display:flex;
+align-items:center;
+justify-content:center;
+height:100vh;
+}
+
+.container{
+background:white;
+padding:25px;
+border-radius:10px;
+width:90%;
+max-width:450px;
+box-shadow:0 0 15px rgba(0,0,0,0.1);
+text-align:center;
+}
+
+textarea{
+width:100%;
+height:120px;
+padding:10px;
+border-radius:6px;
+border:1px solid #ccc;
+resize:none;
+font-size:15px;
+}
+
+button{
+padding:12px 20px;
+margin-top:10px;
+border:none;
+border-radius:6px;
+background:#4285F4;
+color:white;
+font-size:15px;
+cursor:pointer;
+width:100%;
+}
+
+button.secondary{
+background:#777;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<h2>Share Your Experience ⭐</h2>
+
+<textarea id="reviewBox"></textarea>
+
+<button onclick="changeReview()" class="secondary">
+Change Review
+</button>
+
+<button onclick="leaveReview()">
+Copy & Leave Google Review
+</button>
+
+</div>
+
+<script>
+
+const reviews = [
+
+"Great service and very friendly staff. Highly recommended!",
+
+"Very professional and the quality was excellent. I really liked the experience.",
+
+"Good service, affordable price and helpful staff.",
+
+"One of the best businesses in this area. I would definitely recommend it.",
+
+"Very smooth experience and great customer support."
+
+];
+
+function randomReview(){
+
+const index = Math.floor(Math.random() * reviews.length);
+
+document.getElementById("reviewBox").value = reviews[index];
+
+}
+
+function changeReview(){
+
+randomReview();
+
+}
+
+function leaveReview(){
+
+const text = document.getElementById("reviewBox").value;
+
+navigator.clipboard.writeText(text);
+
+window.open("https://www.google.com/search?sca_esv=ad51375bc05ed99f&biw=360&bih=712&sxsrf=ANbL-n7F54RLavvfPrVSJnRVQtsgQiIFEw:1773070832765&q=style+world+by+groom+land+ghaziabad+reviews&uds=ALYpb_lkO4k2M0y9NPTTAAtW-1_AZckqsp-MBBhOGo8tmRPCXGbbhiONbbRmzDL9kA0KKcovV4oP5_gG0E2zwI8Z_IBCNRCKPC0Rt43RyKDk2obGRyLv27NvnpvFbmp35kG1wov27Y4HPnnjY5eoSt7gP02Jgf2xsGAGEETtBJdpmUNns2XYzjB7azM6SD3kD71nC1t-F3Kds_PnZ3IDO4-rmkl3OCynEPPLeqCmMisbs_9-Gn3aauYHrEMYwUAJxURSdyObd75__iiF17oF4NQp5XFdqkPwDneN4ZJGmnnYGkZ6ftWRCvlfcgNiMyvoLtl81P6KJ7YpMZDooedHJOoeKRe49OjaNqBcJwlH17xTRMBQOUrv4obNfq59K8idnYqbfIyI7IOqmTf0kLM73TixYXgXQiH0IxWfEiX_o4SExsVxxBefq25MI29MVQpRKBRdNuJVKk4BsSUKCN4JEMuhgpz3tfKXp0cPj9Sl_IkwRtriQ6TNpvo&si=AL3DRZEsmMGCryMMFSHJ3StBhOdZ2-6yYkXd_doETEE1OR-qOQ5QX8OYdfHewtp4lJIjxkNroqNQi5O0VgnBcF5ecegjqdm2j7DF7yTqJBvux6zClMRqI4BX6Ra11lTA9QiuIPPC55__NuBSpcjcnGXnEh1e9KjvNB9KgaKWwHEoJJsRDTfewBQ%3D&sa=X&ved=2ahUKEwjz5pfJk5OTAxUyg2MGHbgQIJcQk8gLegQIHBAB&ictx=1&stq=1&cs=1&lei=8OmuafOuLrKGjuMPuKGAuQk#ebo=1");
+
+}
+
+randomReview();
+
+</script>
+
+</body>
+
+</html>
